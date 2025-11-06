@@ -16,8 +16,12 @@ import numpy as np
 from datetime import datetime, timedelta
 
 # Configuration de l'app
+
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 app.title = "Olist - Analyse des Performances Commerciales"
+
+server = app.server
+
 
 
 # Chargement des données
@@ -769,15 +773,6 @@ app.index_string = '''
     '''
 
 if __name__ == '__main__':
-    print("\n" + "=" * 60)
-    print("🚀 DASHBOARD OLIST - ANALYSE DES PERFORMANCES")
-    print("=" * 60)
-    print("📊 Dashboard avec filtres interactifs")
-    print("🔧 Corrections appliquées:")
-    print("   - Analyse Clients supprimée")
-    print("   - Erreur px.area corrigée")
-    print("   - Trendline supprimée (statsmodels non requis)")
-    print("   - Filtres date et statut ajoutés")
-    print("🌐 URL : http://127.0.0.1:8050/")
-    print("=" * 60 + "\n")
-    app.run(debug=True, port=8050)
+    import os
+    port = int(os.environ.get('PORT', 8050))
+    app.run(host='0.0.0.0', port=port, debug=False)
