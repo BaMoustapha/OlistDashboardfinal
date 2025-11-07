@@ -59,8 +59,6 @@ app.layout = html.Div([
         html.Div([
             html.H1("📊 Tableau de Bord - Analyse des Performances Olist",
                     style={'color': 'white', 'marginBottom': 10}),
-            html.P("Analyse complète des données e-commerce",
-                   style={'color': 'white', 'fontSize': 18})
         ], style={'textAlign': 'center'})
     ], style={'backgroundColor': colors['dark'], 'padding': '30px', 'marginBottom': '20px'}),
 
